@@ -1,0 +1,22 @@
+代理模式分为静态代理模式和动态代理模式，主要有代理类和委托类构成；它为控制的对象提供一个替身（代理对象），以控指替身的方式来访问目标对象，
+代理对象拥有和委托对象一样的接口，由代理对象去调用委托对象的方法实现业务。
+      代理对象：为委托类处理消息、过滤消息、转发消息、事后处理消息；
+      委托对象： 具体方法提供给代理对象调用
+      共同接口：
+使用代理的好处：
+   将业务处理和非业务处理分离。
+   代理对象可以扩展委托对象的功能。
+   安全的处理委托对象的业务。
+代理模式的分类：
+
+静态代理：
+  代理对象与委托对象共同实现一个接口；代理对象使用委托对象的方式完成业务，同时增加一些无关业务的处理方法；
+
+动态代理(jdk或接口代理)：
+  代理对象不需要实现接口，只需要委托对象实现接口；jdk通过反射机制在 内存中 动态创建代理对象；
+
+  API: java.long.reflect.Proxy 代理类
+          static getProxyClass(ClassLoader loader,Class<>[] interface):创建动态代理类,代理类的加载器，需要实现的接口；
+          static Object newProxyInstance(ClassLoader loader,Class<>[] interface,InvocationHandler handler):
+       java.long.reflect.InvocationHandler 增强方法类
+Cglib代理：
