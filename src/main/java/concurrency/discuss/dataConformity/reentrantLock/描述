@@ -1,0 +1,14 @@
+锁的类型：可重入 独占式 互斥 重量级锁 非公平锁
+锁的生成方式：
+锁的范围：
+特点：是个接口，显示的声明锁，使用锁和释放锁；同步非阻塞，乐观并发。
+reentrantLock原理：继承自Lock接口，自定义实现AQS队列同步器，实现锁的获取与释放
+
+Lock接口的主要方法：
+  lock():加锁，如果锁被其他线程使用，则阻塞等待
+  boolean try lock(): 尝试加锁，锁未被使用返回true并获取锁，否则返回false;
+  boolean try lock(long timeout,TimeUnit unit):在规定时间内没有获取到锁返回false;
+  unlock():释放锁
+  getHoldCount():查看当前线程持有此锁的次数，执行lock的次数
+  lockInterruptibly():如果当前·线程未被中断则获取锁
+  isHeldByCurrentThreads():判断当前线程是否持有该锁

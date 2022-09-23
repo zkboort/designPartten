@@ -2,7 +2,7 @@ package singleTon;
 
 /**
  * @author chennanjiang       通常开发单例由框架去保证：如spring框架等
- * @title demo01
+ * @title Demo01
  * @date 2022/7/27 10:05
  * @description：  饿汉式 单例模式
  *     单例的意思是：无论对象创建多少次，内存当中都只会有一个实例被创建引用

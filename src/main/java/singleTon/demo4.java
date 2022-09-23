@@ -5,9 +5,10 @@ package singleTon;
  * @title demo4
  * @date 2022/7/27 11:13
  * @description 同步锁范围优化    单例模式
- * volatile关键字：jvm底层指令重排
+ * volatile关键字：jvm底层指令阻止重排 指令屏障
  */
 public class demo4 {
+    //使用volatile阻止指令重排，防止其他线程读到正在执行线程任务的中间状态
     private static volatile demo4 INSTANCE;
     private demo4(){};
 
@@ -36,6 +37,7 @@ public class demo4 {
     }
 
     public static void main(String[] args) {
+        //开启多线程访问
         for (int i=0;i<=100;i++){
             new Thread(()->{
                 System.out.println(demo4.getInstance().hashCode());

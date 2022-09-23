@@ -4,7 +4,7 @@ package singleTon;
  * @author chengnanjiang
  * @title demo2
  * @date 2022/7/27 10:34
- * @description 懒汉式加载 单例模式
+ * @description 懒汉式加载 单例模式 存在着问题
  */
 public class demo2 {
     private demo2(){};

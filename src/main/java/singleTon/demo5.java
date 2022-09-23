@@ -8,6 +8,8 @@ package singleTon;
  *   由于外部类在加载时是不会加载内部类的，只有在调用内部类时才会加载内部类；所以可以利用内部类实现懒加载
  *
  *   实现关键： 私有化 静态   内部类
+ *
+ *`
  */
 public class demo5 {
     private demo5(){};
